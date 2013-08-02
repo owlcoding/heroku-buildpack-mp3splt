@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# bin/compile <build-dir> <cache-dir>
+
+echo "-----> Installing mp3splt-2.6"
+
+# change to the the BUILD_DIR ($1)
+cd $1
+
+# download the mp3splt binary (-O) silently (-s)
+curl https://dl.dropboxusercontent.com/u/51630060/Vulcan/mp3splt-2.tgz -s -O
+
+# make a directory to untar (like unzip) the binary
+mkdir -p vendor/mp3splt
+
+# untar the binary to the directory we want
+tar -C vendor/mp3splt -xvf mp3splt-2.tgz
+
